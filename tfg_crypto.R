@@ -6,7 +6,7 @@
 #LAS CRIPTOMONEDAS COMO COBERTURA A LAS POLÍTICAS DE EXPANSIÓN CUANTITATIVA:
 #ANÁLISIS CAUSAL CON APROXIMACIÓN VAR
 
-setwd("C:\\Users\\Roberto\\Dropbox\\TFG")
+setwd("")
 
 library(tidyverse)
 library(tseries)
