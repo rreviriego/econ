@@ -1,10 +1,10 @@
 ###ROBERTO REVIRIEGO MARTIN###
-#TRABAJO FIN DE GRADO EN ECONOM虯
+#TRABAJO FIN DE GRADO EN ECONOM脥A
 #UNIVERSIDAD CARLOS III DE MADRID
 #rreviriego.inbox@gmail.com
 
-#LAS CRIPTOMONEDAS COMO COBERTURA A LAS POL蚑ICAS DE EXPANSI覰 CUANTITATIVA:
-#AN罫ISIS CAUSAL CON APROXIMACI覰 VAR
+#LAS CRIPTOMONEDAS COMO COBERTURA A LAS POL脥TICAS DE EXPANSI脫N CUANTITATIVA:
+#AN脕LISIS CAUSAL CON APROXIMACI脫N VAR
 
 setwd("C:\\Users\\Roberto\\Dropbox\\TFG")
 
@@ -62,10 +62,10 @@ lag <- VARselect(data2F)
 print(lag) #2 LAGS 
 
 
-######COINTEGRACI覰 --> JOHANSEN 
+######COINTEGRACI脫N --> JOHANSEN 
 coint2F <- ca.jo(data2F, type = "trace" , ecdet = "const", K = 10)
 summary(coint2F)
-#no existe cointegraci髇 --> VAR OK (con diferencias)
+#no existe cointegraci贸n --> VAR OK (con diferencias)
 
 
 
@@ -98,7 +98,7 @@ grangerFED2f
 res_fed <- irf(var2F, impulse = "dFED", response = "dBTC", n.ahead = 26, boot = TRUE)
 plot(res_fed, ylab = "dBTC", main = "Shock FED")
 
-#descomposici髇 varianza
+#descomposici贸n varianza
 
 vd2F <- fevd(var2F, n.ahead = 12)
 plot(vd2F)
@@ -120,10 +120,10 @@ lag <- VARselect(data2R)
 print(lag) #3 LAGS 
 
 
-######COINTEGRACI覰 --> JOHANSEN 
+######COINTEGRACI脫N --> JOHANSEN 
 coint2R <- ca.jo(data2R, type = "trace" , ecdet = "const", K = 7)
 summary(coint2R)
-#no existe cointegraci髇 --> VAR OK (con diferencias)
+#no existe cointegraci贸n --> VAR OK (con diferencias)
 
 
 #######OPTIMAL LAG LENGTH (en diferencias)
@@ -153,7 +153,7 @@ grangerRATES2r
 res_rates <- irf(var2R, impulse = "dRATES", response = "dBTC", n.ahead = 26, boot = TRUE)
 plot(res_rates, ylab = "dBTC", main = "Shock RATES")
 
-#descomposici髇 varianza
+#descomposici贸n varianza
 
 vd2R <- fevd(var2R, n.ahead = 12)
 plot(vd2R)
@@ -173,7 +173,4 @@ plot(stability2F)
 model2 <- VECM(data2R, 7, r=1, estim="2OLS")
 summary(model2)
 
-#coeff ect1 --> coeficiente de convergencia al equilibrio --> tarda mucho tiempo en
-#converger al equilibrio
 
-sink()
