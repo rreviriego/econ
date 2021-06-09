@@ -6,7 +6,7 @@
 #LAS CRIPTOMONEDAS COMO COBERTURA A LAS POLÍTICAS DE EXPANSIÓN CUANTITATIVA:
 #ANÁLISIS CAUSAL CON APROXIMACIÓN VAR
 
-setwd("C:\\Users\\Roberto\\Dropbox\\TFG")
+setwd("")
 
 library(tidyverse)
 library(tseries)
@@ -20,7 +20,6 @@ library(TSstudio)
 library(tsDyn)
 
 data <- read.csv("datared.csv")
-sink("./outputred.txt", append = T)
 
 #crear ts
 btc <- ts(data$BTC, start = c(2014,44), frequency = 52)
