@@ -20,7 +20,6 @@ library(TSstudio)
 library(tsDyn)
 
 data <- read.csv("data.csv")
-sink("./outputnorm.txt", append = T)
 
 #crear ts
 btc <- ts(data$BTC, start = c(2013,41), frequency = 52)
@@ -165,4 +164,3 @@ stability2F <- stability(var2R, type = "OLS-CUSUM")
 plot(stability2F)
 
 
-sink()
